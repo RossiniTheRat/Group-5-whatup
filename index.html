@@ -5,10 +5,105 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src=" https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js "></script>
+    <link href=" https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css " rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
+    <section id="homepage">
+        <div class="ui segment">
+            <h1 id="page-header" class="ui center aligned header">
+                My Horoscope
+            </h1>
+            <img class="ui centered huge image" src="./assets/images/viva-luna-studios-r_-onuwuWAU-unsplash.jpg">
+
+            <div class="ui center aligned container">
+                <button id="history-button" class="ui button">
+                    My History
+                </button>
+            </div>
+            <div class="ui center aligned container">
+                <button id="generate-horoscope-button" class="ui button">
+                    Generate Horoscope
+                </button>
+            </div>
+    </section>
+
+    <section id="horoscope-page">
+        <div class="ui segment">
+            <h1 id="page-header" class="ui center aligned header">
+                My Horoscope
+            </h1>
+            <div id="generated-content-card" class="ui segment">
+                <img id="horoscope-page-image" class=" ui centered medium image" src="">
+                <p id="horoscope-page-text"></p>
+                <button id="home-button" class="ui button">
+                    Home
+                </button>
+    </section>
+
+    <section id="history-page">
+        <div class="ui segment">
+            <h1 id="page-header" class="ui center aligned header">
+                My Horoscope
+            </h1>
+
+            <div id="my-history-whole-grid" class="ui stackable three column grid">
+                <div class="column">
+                    <div id="history-card" class="ui segment">
+                        <div class="ui stackable items">
+                            <div class="item">
+                                <a id="history-image" class="ui small image">
+                                    <img>
+                                </a>
+                                <div id="hisory-card-date-and-horoscope" class="content">
+                                    <a id="history-date" class="header"></a>
+                                    <div id="history-horoscope" class="description">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div id="history-card" class="ui segment">
+                        <div class="ui stackable items">
+                            <div class="item">
+                                <a id="history-image" class="ui small image">
+                                    <img>
+                                </a>
+                                <div id="hisory-card-date-and-horoscope" class="content">
+                                    <a id="history-date" class="header"></a>
+                                    <div id="history-horoscope" class="description">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div id="history-card" class="ui segment">
+                        <div class="ui stackable items">
+                            <div class="item">
+                                <a id="history-image" class="ui small image">
+                                    <img>
+                                </a>
+                                <div id="hisory-card-date-and-horoscope" class="content">
+                                    <a id="history-date" class="header"></a>
+                                    <div id="history-horoscope" class="description">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </section>
 
 </body>
 
