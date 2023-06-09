@@ -3,7 +3,7 @@ let isLoadingFirstApiCall = false;
 async function makeApiCall() {
   isLoadingFirstApiCall = true; // Set loading flag to true initially
 
-  const url = '';
+  const url = 'https://api.quotable.io/quotes/random';
   const params = {
     method: 'GET',
   };
@@ -19,3 +19,5 @@ async function makeApiCall() {
     isLoadingFirstApiCall = false; // Set loading flag to false in the finally block
   }
 }
+
+makeApiCall();
