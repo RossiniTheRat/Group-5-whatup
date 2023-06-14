@@ -1,6 +1,6 @@
 // Make a request for object IDs from a specific department
 fetch(
-  'https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=11'
+  'https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=9'
 )
   .then((response) => response.json())
   .then((data) => {
@@ -39,12 +39,14 @@ fetch(
         container.appendChild(imageElement);
       });
   });
-
+// Var and Consts
 var button = document.querySelector('#generate-button');
 const apiUrl = 'https://api.quotable.io/quotes/random';
-const container = document.getElementById('generate-page-text');
+const container = document.getElementById('generated-content-card');
+const imageContainer = document.getElementById('image-container');
 
 button.addEventListener('click', function () {
+  // Fetch a new random quote
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
@@ -53,5 +55,41 @@ button.addEventListener('click', function () {
     })
     .catch((error) => {
       console.error('Error:', error);
+    });
+
+  // Fetch a new random image
+  fetch(
+    'https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=11'
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const objectIDs = data.objectIDs;
+      const randomObjectID =
+        objectIDs[Math.floor(Math.random() * objectIDs.length)];
+
+      // Retrieve artwork details
+      fetch(
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomObjectID}`
+      )
+        .then((response) => response.json())
+        .then((artworkData) => {
+          const imageURL = artworkData.primaryImage;
+          const imageElement = document.createElement('img');
+          imageElement.src = imageURL;
+          imageElement.setAttribute('width', '700px');
+          imageElement.setAttribute('height', 'auto');
+          imageElement.style.display = 'block';
+          imageElement.style.marginLeft = 'auto';
+          imageElement.style.marginRight = 'auto';
+
+          // Remove the old image if it exists
+          const oldImageElement = imageContainer.querySelector('img');
+          if (oldImageElement) {
+            imageContainer.removeChild(oldImageElement);
+          }
+
+          // Add the new image to the container on the webpage
+          imageContainer.appendChild(imageElement);
+        });
     });
 });
