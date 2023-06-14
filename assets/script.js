@@ -51,7 +51,7 @@ button.addEventListener('click', function () {
     .then((response) => response.json())
     .then((data) => {
       console.log('quote', data[0].content);
-      container.textContent = data[0].content;
+      container.textContent = data[0].content + ' -' + data[0].author;
     })
     .catch((error) => {
       console.error('Error:', error);
