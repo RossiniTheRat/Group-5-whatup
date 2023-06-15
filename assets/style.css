@@ -1,12 +1,77 @@
 #generate-button {
   margin-top: 20px;
+  background-color: rgb(0, 238, 255);
 }
+
 #history-button {
   margin-top: 20px;
+  background-color: rgb(0, 238, 255);
 }
-#generate-text {
+
+#generate-page-text {
   margin-top: 20px;
 }
+
 #generated-content-card {
   text-align: center;
+  padding: 8%;
+  background-color: color-mix(in srgb, gold 30%, brown 10%);
 }
+
+body {
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#homepage-header {
+  font-size:  24px;
+  margin-top: 40px;
+}
+
+#generate-page-header {
+  font-size:  24px;
+  margin-top: 40px;
+}
+
+/* History page section */
+
+#history-page-header {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+#my-history-whole-grid {
+  margin-top: 20px ;
+}
+
+#generate-page {
+    margin-top: 20px;
+  }
+  
+#generate-page-image {
+    max-width: 300px;
+  }
+
+  .column {
+    padding: 5px;
+  }
+
+  .history-card {
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .history-card .header {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+
+  .history-card .description p {
+    font-size: 14px;
+    margin: 0;
+  }
+
+ 
+
