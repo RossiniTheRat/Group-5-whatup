@@ -1,43 +1,20 @@
-let isLoadingFirstApiCall = false;
-
-async function makeApiCall() {
-  isLoadingFirstApiCall = true; // Set loading flag to true initially
-
-  const url = 'https://api.quotable.io/quotes/random';
-  const params = {
-    method: 'GET',
-  };
-
-  try {
-    const response = await fetch(url, params);
-    const data = await response.json();
-    if (data.hasOwnProperty('content')) {
-      const quote = data.content;
-      console.log(quote);
-    } else {
-      console.log('Failed to retrieve a quote');
-    }
-  } catch (error) {
-    console.log('An error occurred:', error);
-  } finally {
-    isLoadingFirstApiCall = false; // Set loading flag to false in the finally block
-  }
-}
-
-makeApiCall();
-
 // Make a request for object IDs from a specific department
-fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=11')
-  .then(response => response.json())
-  .then(data => {
+fetch(
+  'https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=9'
+)
+  .then((response) => response.json())
+  .then((data) => {
     // Select a random object ID
     const objectIDs = data.objectIDs;
-    const randomObjectID = objectIDs[Math.floor(Math.random() * objectIDs.length)];
+    const randomObjectID =
+      objectIDs[Math.floor(Math.random() * objectIDs.length)];
 
     // Retrieve artwork details
-    fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomObjectID}`)
-      .then(response => response.json())
-      .then(artworkData => {
+    fetch(
+      `https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomObjectID}`
+    )
+      .then((response) => response.json())
+      .then((artworkData) => {
         // Extract the image URL
         const imageURL = artworkData.primaryImage;
 
@@ -46,7 +23,7 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects?departme
         imageElement.src = imageURL;
 
         // Set width and height attributes to resize the image
-        imageElement.setAttribute('width', '700px'); 
+        imageElement.setAttribute('width', '700px');
         imageElement.setAttribute('height', 'auto'); // This ensures the height scales proportionally
 
         // Center the image horizontally within the container
@@ -62,3 +39,57 @@ fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects?departme
         container.appendChild(imageElement);
       });
   });
+// Var and Consts
+var button = document.querySelector('#generate-button');
+const apiUrl = 'https://api.quotable.io/quotes/random';
+const container = document.getElementById('generated-content-card');
+const imageContainer = document.getElementById('image-container');
+
+button.addEventListener('click', function () {
+  // Fetch a new random quote
+  fetch(apiUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('quote', data[0].content);
+      container.textContent = data[0].content + ' -' + data[0].author;
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+
+  // Fetch a new random image
+  fetch(
+    'https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=11'
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const objectIDs = data.objectIDs;
+      const randomObjectID =
+        objectIDs[Math.floor(Math.random() * objectIDs.length)];
+
+      // Retrieve artwork details
+      fetch(
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${randomObjectID}`
+      )
+        .then((response) => response.json())
+        .then((artworkData) => {
+          const imageURL = artworkData.primaryImage;
+          const imageElement = document.createElement('img');
+          imageElement.src = imageURL;
+          imageElement.setAttribute('width', '700px');
+          imageElement.setAttribute('height', 'auto');
+          imageElement.style.display = 'block';
+          imageElement.style.marginLeft = 'auto';
+          imageElement.style.marginRight = 'auto';
+
+          // Remove the old image if it exists
+          const oldImageElement = imageContainer.querySelector('img');
+          if (oldImageElement) {
+            imageContainer.removeChild(oldImageElement);
+          }
+
+          // Add the new image to the container on the webpage
+          imageContainer.appendChild(imageElement);
+        });
+    });
+});
