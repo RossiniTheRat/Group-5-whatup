@@ -1,8 +1,9 @@
 #generate-button {
   margin-top: 20px;
-  background-color: rgb(0, 238, 255);
+  background-color: burlywood;
   margin-bottom: 30px;
 }
+/* rgb(0, 238, 255) */
 
 #generate-page-text {
   margin-top: 20px;
@@ -15,7 +16,7 @@
 }
 
 body {
-  background-color: white;
+  background-image: url(./images/backgroundpaper.jpg);
   font-family: Arial, Helvetica, sans-serif;
 }
 
