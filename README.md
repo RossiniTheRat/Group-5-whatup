@@ -12,7 +12,7 @@ The Metropolitan Museum of Art "does not require API users to register or obtain
 
 The project contains HTML, CSS, and JavaScript codes. The main objective of this project is to enable users to obtain inspirational quote(s) with images(s) from the application's Website.
 
-A user clicks on the Generate button. A random image is displayed on the screen simultaneously with a motivational quote that is displayed within the quote section.
+A user clicks on the Generate A Quote button. A random image is displayed on the screen simultaneously with a motivational quote that is displayed within the quote section.
 
 **Credits/References**
 
@@ -23,7 +23,7 @@ Below were the references used for this application:
 a. API documentation from : https://metmuseum.github.io/
 b. fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects?departmentIds=11')
 c. API quotes from: https://api.quotable.io/quotes/random
-d. Color mix idea obtained from: https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/color-mix
+d. CSS styling from: https://semantic-ui.com/
 
 
 **License**
@@ -34,6 +34,6 @@ MIT License was used for creating this repository.
 
 Here is the link to the deployed application:
 
-**Screenshot of the Deployed Application**
+**Screenshots and Gif of the Deployed Application**
 
 Below is the screenshot for the deployed application.
