@@ -45,6 +45,10 @@ const apiUrl = 'https://api.quotable.io/quotes/random';
 const container = document.getElementById('generated-content-card');
 const imageContainer = document.getElementById('image-container');
 
+let quoteId = 0;
+let quoteText = '';
+let quoteAuthor = '';
+
 button.addEventListener('click', function () {
   // Fetch a new random quote
   fetch(apiUrl)
@@ -52,6 +56,18 @@ button.addEventListener('click', function () {
     .then((data) => {
       console.log('quote', data[0].content);
       container.textContent = data[0].content + ' -' + data[0].author;
+      quoteId++;
+      quoteText = data[0].content;
+      quoteAuthor = data[0].author;
+      const generatedQuote = {
+        id: quoteId,
+        text: quoteText,
+        author: quoteAuthor
+      }
+      localStorage.setItem(generatedQuote.id, JSON.stringify(generatedQuote));
+      console.log(generatedQuote)
+      return generatedQuote;
+
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -92,4 +108,7 @@ button.addEventListener('click', function () {
           imageContainer.appendChild(imageElement);
         });
     });
+
+//trying to commit
+
 });
