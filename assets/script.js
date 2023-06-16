@@ -62,12 +62,14 @@ button.addEventListener('click', function () {
       const generatedQuote = {
         id: quoteId,
         text: quoteText,
-        author: quoteAuthor
-      }
-      localStorage.setItem(generatedQuote.id, JSON.stringify(generatedQuote));
-      console.log(generatedQuote)
+        author: quoteAuthor,
+      };
+      localStorage.setItem(
+        generatedQuote.id,
+        JSON.stringify(generatedQuote)
+      );
+      console.log(generatedQuote);
       return generatedQuote;
-
     })
     .catch((error) => {
       console.error('Error:', error);
@@ -108,7 +110,4 @@ button.addEventListener('click', function () {
           imageContainer.appendChild(imageElement);
         });
     });
-
-//trying to commit
-
 });
