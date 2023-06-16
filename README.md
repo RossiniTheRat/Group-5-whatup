@@ -32,7 +32,7 @@ MIT License was used for creating this repository.
 
 **Link to the Deployed Application/Website:**
 
-Here is the link to the deployed application:
+Here is the link to the deployed application: https://rossinitherat.github.io/Group-5-whatup/
 
 **Screenshot of the Deployed Application**
 
