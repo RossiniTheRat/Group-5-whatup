@@ -37,3 +37,6 @@ Here is the link to the deployed application: https://rossinitherat.github.io/Gr
 **Screenshots and Gif of the Deployed Application**
 
 Below is the screenshot for the deployed application.
+
+![image](https://github.com/RossiniTheRat/Group-5-whatup/assets/116689797/dc018df1-1d94-471d-8373-ce64ae250afa)
+
